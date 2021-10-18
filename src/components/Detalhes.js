@@ -18,15 +18,12 @@ const Detalhes = () => {
     if (doc.exists) {
       setObra({ id: doc.id, ...doc.data() });
     } else {
-      // doc.data() will be undefined in this case
+     
       console.log("Erro...");
     }
 
-//    console.log(doc);
   };
 
-  // indica o que será executado logo após a renderização deste componente
-  // dependente do id que foi passado por parâmetro
   useEffect(() => {
     getObra(id);
   }, [id]);
